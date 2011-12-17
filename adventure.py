@@ -39,7 +39,6 @@ class Adventure:
         action=raw_input("What would you want to do?" )
         action=action.split()
         if action[0]=="Go":
-            self.location = [2, 4]
             direction=action[1]
             try:
                 if direction=="N":
@@ -52,7 +51,8 @@ class Adventure:
                     self.move(0,-1)
                 else:
                     print "well done, asshole, you broke the game by not choosing from the options."
-                except:
+            except:
+                pass
         elif action[0]=="Help":
             print Help
         elif action[0]=="Help_Use":
