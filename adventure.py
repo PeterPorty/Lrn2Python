@@ -41,16 +41,18 @@ class Adventure:
         if action[0]=="Go":
             self.location = [2, 4]
             direction=action[1]
-            if direction=="N":
-                self.move(0,1)
-            elif direction=="E":
-                self.move(1,0)
-            elif direction=="W":
-                self.move(-1,0)
-            elif direction=="S":
-                self.move(0,-1)
-            else:
-                print "well done, asshole, you broke the game by not choosing from the options."
+            try:
+                if direction=="N":
+                    self.move(0,1)
+                elif direction=="E":
+                    self.move(1,0)
+                elif direction=="W":
+                    self.move(-1,0)
+                elif direction=="S":
+                    self.move(0,-1)
+                else:
+                    print "well done, asshole, you broke the game by not choosing from the options."
+                except:
         elif action[0]=="Help":
             print Help
         elif action[0]=="Help_Use":
