@@ -16,6 +16,7 @@ class Adventure:
     Help_Inv='It simply lists all you have in your inventory.'
     inventory=[]
     Inv=inventory
+    location=[2, 4]
 
     def __init__(self):
         game="running"
@@ -25,13 +26,13 @@ class Adventure:
             print location
     
     def win(self):
-        if location==[2,0]:
+        if location==[2, 0]:
             game="finished"
 
-    def move(self, loc, x, y):
-        if self.maze[loc[self.Y] + y][loc[self.X] + x]:
-            loc[self.X] += x
-            loc[self.Y] += y
+    def move(self, x, y):
+        if self.maze[location[self.Y] + y][location[self.X] + x]:
+            location[self.X] += x
+            location[self.Y] += y
         else:
             raise Exception("You can't move here.")
 
@@ -42,13 +43,13 @@ class Adventure:
             location = [2, 4]
             direction=action[1]
             if direction=="N":
-                self.move(location,0,1)
+                self.move(0,1)
             elif direction=="E":
-                self.move(location,1,0)
+                self.move(1,0)
             elif direction=="W":
-                self.move(location,-1,0)
+                self.move(-1,0)
             elif direction=="S":
-                self.move(location,0,-1)
+                self.move(0,-1)
             else:
                 print "well done, asshole, you broke the game by not choosing from the options."
         elif action[0]=="Help":
