@@ -19,7 +19,7 @@ class Adventure:
 
     def __init__(self):
         game="running"
-        location = [2, 4]
+        self.location = [2, 4]
         while game=="running":
             self.action()
             print location
